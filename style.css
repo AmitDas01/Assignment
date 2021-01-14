@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  background: -webkit-linear-gradient(bottom, #0250c5, #d43f8d);
+}
+::selection {
+  color: #fff;
+  background: #d43f8d;
+}
+.container {
+  width: 350px;
+  background: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 50px 35px 10px 35px;
+}
+.container header {
+  font-size: 35px;
+  font-weight: 600;
+  margin: 0 0 30px 0;
+}
+.container .form-outer {
+  width: 100%;
+  overflow: hidden;
+}
+.container .form-outer form {
+  display: flex;
+  width: 400%;
+}
+.form-outer form .page {
+  width: 25%;
+  transition: margin-left 0.3s ease-in-out;
+}
+.form-outer form .page .title {
+  text-align: left;
+  font-size: 25px;
+  font-weight: 500;
+}
+.form-outer form .page .field {
+  width: 330px;
+  height: 45px;
+  margin: 45px 0;
+  display: flex;
+  position: relative;
+}
+form .page .field .label {
+  position: absolute;
+  top: -30px;
+  font-weight: 500;
+}
+form .page .field input {
+  height: 100%;
+  width: 90%;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding-left: 15px;
+  font-size: 18px;
+}
+form .page .field select {
+  width: 100%;
+  padding-left: 10px;
+  font-size: 17px;
+  font-weight: 500;
+}
+form .page .field button {
+  width: 100%;
+  height: calc(100% + 5px);
+  border: none;
+  background: #d33f8d;
+  margin-top: -20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+}
+form .page .field button:hover {
+  background: #000;
+}
+form .page .btns button {
+  margin-top: -20px !important;
+}
+form .page .btns button.prev {
+  margin-right: 3px;
+  font-size: 17px;
+}
+form .page .btns button.next {
+  margin-left: 3px;
+}
+.container .progress-bar {
+  display: flex;
+  margin: 40px 0;
+  user-select: none;
+}
+.container .progress-bar .step {
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+.container .progress-bar .step p {
+  font-weight: 500;
+  font-size: 18px;
+  color: #000;
+  margin-bottom: 8px;
+}
+.progress-bar .step .bullet {
+  height: 25px;
+  width: 25px;
+  border: 2px solid #000;
+  display: inline-block;
+  border-radius: 50%;
+  position: relative;
+  transition: 0.2s;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 25px;
+}
+.progress-bar .step .bullet.active {
+  border-color: #d43f8d;
+  background: #d43f8d;
+}
+.progress-bar .step .bullet span {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.progress-bar .step .bullet.active span {
+  display: none;
+}
+.progress-bar .step .bullet:before,
+.progress-bar .step .bullet:after {
+  position: absolute;
+  content: "";
+  bottom: 11px;
+  right: -51px;
+  height: 3px;
+  width: 44px;
+  background: #262626;
+}
+.progress-bar .step .bullet.active:after {
+  background: #d43f8d;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 0.3s linear forwards;
+}
+@keyframes animate {
+  100% {
+    transform: scaleX(1);
+  }
+}
+.progress-bar .step:last-child .bullet:before,
+.progress-bar .step:last-child .bullet:after {
+  display: none;
+}
+.progress-bar .step p.active {
+  color: #d43f8d;
+  transition: 0.2s linear;
+}
+.progress-bar .step .check {
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  font-size: 15px;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+.progress-bar .step .check.active {
+  display: block;
+  color: #fff;
+}
+
+label.direct .placeholder::before {
+  width: 64px;
+  height: 64px;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20version%3D%221.1%22%20viewBox%3D%220%200%2064%2064%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%220%22%20fill%3D%22%23555555%22%20stroke%3D%22%23555555%22%3E%3Cg%20fill-rule%3D%22nonzero%22%3E%3Cpath%20d%3D%22M31.50012%204c3.61021%200%206.5%203.1525%206.5%207%200%201.96406-.75304%203.747-1.97053%205.02194%205.22044.33382%209.35047%204.67363%209.35047%209.97806a10%2010%200%2001-.04078.90225l-.05091.44888-1.01722%207.45955c-.4025%202.95168-2.51022%205.07216-5.34281%205.18462L38.69063%2040v-2c1.8369%200%203.21653-1.28105%203.56545-3.24638l.03341-.21317%201.01721-7.45954A8%208%200%200043.38006%2026c0-4.33491-3.44783-7.86454-7.75082-7.9962L35.38006%2018H33v-2h.001l.00027-.28616c1.73843-.68506%202.99885-2.52609%202.99885-4.71384%200-2.77991-2.03508-5-4.5-5s-4.5%202.22009-4.5%205c0%202.18817%201.2609%204.02949%202.99984%204.71423L29.999%2016H30v2h-1.9988a8%208%200%2000-1.08091.07336c-4.29517.5857-7.32658%204.47882-6.87563%208.76014l.0299.2474%201.0172%207.45955c.27456%202.01345%201.60032%203.36393%203.40383%203.45468L24.69063%2038v2c-2.87211%200-5.04658-2.0407-5.54306-4.9453l-.03747-.24402-1.0172-7.45955c-.74622-5.4722%203.08496-10.51322%208.55716-11.25943a10.00006%2010.00006%200%2001.34912-.04137C25.76464%2014.77409%2025.00012%2012.97898%2025.00012%2011c0-3.8475%202.88979-7%206.5-7z%22/%3E%3Cpath%20d%3D%22M38.5802%2024.00612c.5489-.061%201.04332.33454%201.10431.88345l.13853%201.27249c.55588%205.21704.8449%209.3717.8663%2012.47108L40.69063%2039c0%203.81328-.33484%209.50554-1%2017%200%202.68875-2.1223%204.88182-4.78311%204.99538L34.69062%2061h-6c-2.76142%200-5-2.23858-4.99612-4.9121l-.22855-2.67393c-.49892-6.04487-.75718-10.73-.7744-14.06213L22.69063%2039c0-3.37676.33572-8.07691%201.00611-14.11043.061-.5489.55541-.94444%201.10432-.88345.5489.06099.94444.5554.88345%201.10431l-.20165%201.87187c-.50727%204.86914-.7707%208.75792-.79097%2011.66007L24.69063%2039c0%203.74228.33183%209.38334%201%2017%200%201.59768%201.24892%202.90366%202.82373%202.9949l.17627.0051h6c1.65685%200%203-1.34315%203.00387-3.0879l.22691-2.6545c.49527-5.99962.75124-10.63926.7683-13.91216L38.69063%2039c0-3.2899-.33094-7.92309-.99389-13.88957-.06098-.5489.33455-1.04332.88346-1.10431z%22/%3E%3Cpath%20d%3D%22M31.69063%2037c.51283%200%20.9355.38604.99327.88338L32.69063%2038v22c0%20.55228-.44772%201-1%201-.51284%200-.9355-.38604-.99327-.88338L30.69063%2060V38c0-.55228.44771-1%201-1z%22/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  border-radius: 0;
+}
+
+.tb {
+  padding-bottom: 100px;
+}
+
+th,
+td {
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+#sb{
+  width: 100%;
+  height: calc(100% + 5px);
+  border: none;
+  background: #d43f8d;
+  margin-top: -20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+}
+
+#sb:hover {
+  background: #000;
+}
